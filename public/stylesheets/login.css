@@ -1,0 +1,125 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#main{
+  position: relative;
+  width: 100%;
+  height: 100%; 
+  /* display: flex;
+  align-items: center;
+  justify-content: center;  */
+}
+#container{
+  position: relative;
+  width: 25%;
+  height: 60%;
+  left: 40%;
+  top: 10%;
+  /* background-color: red; */
+}
+#icon{
+  position: relative;
+  width: 12%;
+  height: 10%;
+  border-radius: 50%;
+  left: 42%;
+  top: 2%;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  font-family: "Aeonik";
+  font-size: 30px;
+  color: blueviolet;
+  padding-left: 8px;
+  font-weight: 500;
+  background-color: rgba(137, 43, 226, 0.187);
+  outline: rgba(137, 43, 226, 0.091) solid 10px;
+}
+h1{
+  font-family: "Aeonik";
+  font-size: 33px;
+  font-weight: 500;
+  position: relative;
+  left: 19%;
+  margin-top: 30px;
+}
+p{
+  position: relative;
+  font-family: "Aeonik";
+  font-size: 15px;
+  font-weight: 500;
+  left: 18%;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.596);
+}
+form{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: "Aeonik";
+  width: 90%;
+  left: 5%;
+  top: 2%;
+}
+label{
+  font-family: "Aeonik";
+  font-size: 25px;
+  margin-top: 15px;
+}
+form input{
+  position: relative;
+  width: 100%;
+  height: 42px;
+  font-size: 20px;
+  padding: 0 5px;
+  margin-top: 8px;
+  border-radius: 5px;
+  outline: none;
+  border: 0.3px solid rgba(0, 0, 0, 0.489);
+}
+form input:focus{
+  box-shadow: 0px 0px 5px 0px rgba(132, 0, 255, 0.79);
+  border-color: rgba(132, 0, 255, 0.79);
+  outline: none;
+  border: 0.7px solid rgba(42, 134, 232, 0.687);
+  border: none;
+}
+form input[type=submit]{
+  position: relative;
+  width: 100%;
+  margin-top: 22px;
+  background-color: rgba(132, 0, 255, 0.79);
+  border: none;
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 18px;
+  text-decoration: none;
+  gap: 10px;
+  margin-top: 8%;
+  font-weight: 500;
+  margin-right: 15px;
+}
+a i{
+  margin-top:2px;
+  font-family: "Aeonik";
+  font-size: 15px;
+  font-weight: 600;
+}
+a:hover{
+  text-decoration: underline;
+}

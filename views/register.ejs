@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/register.css">
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <img src="./photo-1522780550166-284a0288c8df-removebg-preview.png" alt="">
+        </div>
+        <div id="right">
+            <h2>Register</h2>
+            <h4>Manage all your lottery efficiently</h4>
+            <p>Let's you all set up so you can verify your personal account and brgin <br>setting up your profile.</p>
+            <form action="/addUser" method="post">
+                <div class="input">
+                    <label for="">First Name*</label>
+                    <input name="firstName" type="text">
+                </div>
+                <div class="input">
+                    <label for="">Last Name</label>
+                    <input name="lastName" type="text">
+                </div>
+                <div class="input">
+                    <label for="">Mobile Number*</label>
+                    <input name="mobileNum" type="text">
+                </div>
+                <div class="input">
+                    <label for="">Email*</label>
+                    <input name="email" type="email">
+                </div>
+                <div class="input">
+                    <label for="">Password*</label>
+                    <input name="password" type="password">
+                </div>
+                <div id="checkbox">
+                    <input id="check" type="checkbox" name="check" value="form">
+                    <label style="margin-bottom: 20px; margin-left:20px;" for="checkbox">Yes, I want to recieve Lottery Display Emails</label>
+                </div>
+                <div id="checkbox" style="margin-top: -25px;">
+                    <input id="check" type="checkbox" name="check" value="form">
+                    <label style="margin-bottom: 20px; margin-left:20px;" for="checkbox">Yes, I agree to all The <a href="">Terms</a> and <a href="">Privacy Policy</a></label>
+                </div>
+                <input id="submit-btn" type="submit" value="Create Account">
+                <div id="signup">Already have an account? <a href="/login">Sign in</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

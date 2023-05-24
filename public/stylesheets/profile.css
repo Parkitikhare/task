@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+}
+#left{
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background-color: #232323;
+}
+#left #profile{
+    position: relative;
+    width: 38%;
+    height: 15%;
+    left: 28%;
+    top: 5%;
+    border-radius: 50%;
+    background-color: red;
+}
+#right{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: center;
+}
+#name{
+    color: #fff;
+    font-family: gilroy;
+    position: relative;
+    top: 8%;
+    left: 20%;
+}
+#mail{
+    color: #fff;
+    font-family: gilroy;
+    position: relative;
+    top: 8%;
+    left: 25%;
+}
+.tasklist{
+    width: 90%;
+    height: 50%;
+    /* background-color: #fff; */
+    position: relative;
+    display: flex;
+    top: 5%;
+}
+.boxes{
+    width: calc(100% / 3);
+    height: 100%;
+}
+.boxes>h1{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-family: gilroy;
+}

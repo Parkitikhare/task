@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: "Aeonik";
+}
+#main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+#left{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background-color:rgb(7, 255, 172);
+}
+#left img{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+#right{
+    position: relative;
+    width: 60%;
+    height: 100%;
+    background-color: aliceblue;
+}
+#right h2{
+    position: relative;
+    color: rgb(87, 4, 164);
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 10px;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+#right h4{
+    position: relative;
+    color: rgba(58, 1, 112, 0.947);
+    font-size: 18px;
+    font-weight: 500;
+    opacity: .9;
+    margin-top: 60px;
+    margin-left: 15%;
+}
+#right p{
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(58, 1, 112, 0.947);
+    opacity: .7;
+    margin-top: 10px;
+    margin-left: 15%;
+}
+form{
+    position: relative;
+    width: 60%;
+    left: 15%;
+    /* min-height: 15vh; */
+    top: 4%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap !important;
+    /* flex-direction: column-reverse; */
+    /* background-color: red; */
+}
+.input{
+    position: relative;
+    width: 48%;
+    display: flex;
+    flex-direction: column; 
+}
+input{
+    position: relative;
+    width: 100%;
+    padding: 6px 5px;
+    font-size: 18px;
+}
+.select{
+    position: relative;
+    width: 100%;
+    padding: 8px 5px;
+    margin-top: 2px;
+}
+label{
+    margin-bottom: 7px;
+    margin-top: 20px;
+}
+#checkbox{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+#check{
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+#submit-btn{
+    position: absolute;
+    top: 105%;
+    width: 32%;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: tomato;
+    color: white;
+}
+#signup{
+    position: absolute;
+    top: 120%;
+}
+#signup a{
+    text-decoration: none;
+    color: blue;
+}
+#signup a:hover{
+    text-decoration: underline;
+    font-weight: 500;
+}
+
