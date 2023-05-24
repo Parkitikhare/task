@@ -11,11 +11,11 @@ passport.use(AdminModel.createStrategy());
 const excelJS = require("exceljs");
 
 /* GET home page. */
-router.get('/', async function(req, res, next) {
+router.get('/', isLoggedIn,async function(req, res, next) {
   const AllUser= await userModel.find()
   res.render('AllUser',{AllUser});
 });
-router.post('/addUser', async function (req, res) {
+router.post('/addUser',isLoggedIn, async function (req, res) {
   let isUserexist=await userModel.findOne({email: req.body.email,})
   if(isUserexist){
     return res.redirect('/')
@@ -28,7 +28,7 @@ router.post('/addUser', async function (req, res) {
  
    res.redirect('/')
  })
-router.get('/assignTask', async function (req, res) {
+router.get('/assignTask',isLoggedIn, async function (req, res) {
   let AllUser
   if(req.query.userId){
     AllUser= await userModel.find({_id:req.query.userId})
@@ -38,7 +38,7 @@ router.get('/assignTask', async function (req, res) {
     res.render('Assigntask',{AllUser})
   }
  })
-router.post('/assignTask', async function (req, res) {
+router.post('/assignTask',isLoggedIn, async function (req, res) {
   const user=await userModel.findById(req.body.userid)
   const Task=await taskModel.create({
     userId:user._id,
@@ -48,7 +48,7 @@ router.post('/assignTask', async function (req, res) {
   })
      res.redirect('/')
  })
-router.get('/allTask', async function (req, res) {
+router.get('/allTask',isLoggedIn, async function (req, res) {
   let AllTask
   if(req.query.userId){
     AllTask=await taskModel.find({userId:req.query.userId})
@@ -65,17 +65,17 @@ router.get('/login',isRedirect, function(req,res){
 
 
 router.post('/login',passport.authenticate('local',{
-  successRedirect:'/taskPage',
+  successRedirect:'/',
   failureRedirect:'/register'
 }));
 
 
 
-router.get('/addUser', async function (req, res) {
+router.get('/addUser',isLoggedIn, async function (req, res) {
  
   res.render('AddUser')
 })
-router.post('/addUser', async function (req, res) {
+router.post('/addUser',isLoggedIn, async function (req, res) {
  const user= await userModel.create({
   Name:req.body.name,
   email: req.body.email,
@@ -85,12 +85,12 @@ router.post('/addUser', async function (req, res) {
   res.redirect('/')
 })
 
-router.get("/edit",async(req,res)=>{
+router.get("/edit",isLoggedIn,async(req,res)=>{
   const task=await taskModel.findById(req.query.taskId)
 
   res.render("editTask",{task})
 })
-router.post("/editTask",async(req,res)=>{
+router.post("/editTask",isLoggedIn,async(req,res)=>{
 console.log(req.body);
   const task= await taskModel.findById(req.body.id)
   console.log(task);
@@ -100,14 +100,14 @@ console.log(req.body);
 
   res.redirect("/allTask")
 })
-router.get("/delete",async(req,res)=>{
+router.get("/delete",isLoggedIn,async(req,res)=>{
   const task=await taskModel.findByIdAndDelete(req.query.taskId)
 
   res.redirect("/allTask")
 })
 
 
-router.get("/export",async (req,res)=>{
+router.get("/export",isLoggedIn,async (req,res)=>{
   const User=await userModel.find()
 
   const Task=await taskModel.find()
@@ -149,6 +149,7 @@ Task.forEach((task) => {
 try {
   const userData = await AllUserworkbook.xlsx.writeFile(`${path}/users.xlsx`)
   const taskData = await Alltaskworkbook.xlsx.writeFile(`${path}/tasks.xlsx`)
+ 
    .then(() => {
      res.send({
        status: "success",
@@ -164,8 +165,26 @@ try {
   });
   }
 })
+router.get('/register',function(req,res){
+  res.render('register')
+})
 
-
+router.post('/register',function(req,res){
+  var newUser = new AdminModel({
+  firstName:req.body.firstName,
+  lastName:req.body.lastName,
+  email:req.body.email,
+  mobileNum:req.body.monileNum,
+ })
+ AdminModel.register(newUser,req.body.password)
+ .then(function(){
+  passport.authenticate('local')(req,res,function(){
+    res.redirect('/')
+ })
+ }).catch(function(error){
+  res.send(error);
+ })
+})
 
 
 router.get('/logout',function(req,res,next){
